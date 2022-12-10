@@ -1,9 +1,9 @@
 import ArLocal from 'arlocal';
 import { JWKInterface } from 'arweave/node/lib/wallet';
-import { LoggerFactory, Warp, WarpFactory, Contract } from 'warp-contracts';
-import { HelloState } from '../src/contracts/types/types';
 import fs from 'fs';
 import path from 'path';
+import { Contract, LoggerFactory, Warp, WarpFactory } from 'warp-contracts';
+import { HelloState } from '../src/contracts/types/types';
 
 jest.setTimeout(30000);
 
