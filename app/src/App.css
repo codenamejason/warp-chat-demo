@@ -1,0 +1,53 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form {
+  margin-top: 40px;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-color: whitesmoke;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.content-input:focus {
+  border-color: blueviolet;
+}
+
+.content-input {
+  border-color: black;
+}
+
+.form > form > input {
+  width: 200px;
+  padding: 8px 12px;
+  margin-right: 10px;
+}
+
+.add-button {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.state-items {
+  margin-top: 20px;
+  border: 1px solid;
+  border-color: whitesmoke;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.state-item {
+  margin-top: 20px;
+  border: 1px solid;
+  border-color: whitesmoke;
+  border-radius: 5px;
+  padding: 15px;
+}
