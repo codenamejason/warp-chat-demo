@@ -8,12 +8,14 @@
   "private": true,
   "scripts": {
     "dev": "yarn workspace @warp/client dev",
-    "clean": "rimraf ./dist",
-    "build-ts": "node build.js",
-    "build": "yarn run clean && yarn run build-ts",
-    "deploy:mainnet": "yarn ts-node src/tools/deploy-contract.ts",
-    "deploy:testnet": "yarn ts-node src/tools/deploy-testnet-contract.ts",
-    "test": "jest"
+    "build:client": "yarn workspace @warp/client vite build",
+    "preview": "yarn workspace @warp/client vite preview",
+    "clean": "yarn workspace @warp/contracts rimraf ./dist",
+    "build-ts": "yarn workspace @warp/contracts node build.js",
+    "build:contracts": "yarn workspace @warp/contracts run clean && yarn workspace @warp/contracts run build-ts",
+    "deploy:mainnet": "yarn workspace @warp/contracts ts-node src/tools/deploy-contract.ts",
+    "deploy:testnet": "yarn workspace @warp/contracts ts-node src/tools/deploy-testnet-contract.ts",
+    "test": "yarn workspace @warp/contracts jest"
   },
   "workspaces": {
     "packages": [
