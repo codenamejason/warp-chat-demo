@@ -1,0 +1,27 @@
+{
+  "name": "@warp/monorepo",
+  "version": "0.0.1",
+  "description": "Warp chat application",
+  "main": "index.js",
+  "author": "jaxcoder",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "yarn workspace @warp/client dev",
+    "clean": "rimraf ./dist",
+    "build-ts": "node build.js",
+    "build": "yarn run clean && yarn run build-ts",
+    "deploy:mainnet": "yarn ts-node src/tools/deploy-contract.ts",
+    "deploy:testnet": "yarn ts-node src/tools/deploy-testnet-contract.ts",
+    "test": "jest"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": []
+  },
+  "engines": {},
+  "devDependencies": {},
+  "dependencies": {}
+}

@@ -1,11 +1,11 @@
 {
-  "name": "warp-template-typescript",
+  "name": "@warp/contracts",
   "version": "0.0.1",
   "description": "Warp contracts - Typescript template",
   "main": "index.js",
   "author": "Redstone Team <dev@redstone.finance>",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "scripts": {
     "clean": "rimraf ./dist",
     "build-ts": "node build.js",

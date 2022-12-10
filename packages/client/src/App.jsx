@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { WarpFactory, defaultCacheOptions } from 'warp-contracts/web';
-import './App.css';
+import { useEffect, useState } from "react";
+import { defaultCacheOptions, WarpFactory } from "warp-contracts/web";
+import "./App.css";
 
 const warp = WarpFactory.forMainnet({ ...defaultCacheOptions, inMemory: true });
-const contractId = 'N4G1F2ftAbArKpS5iHjPSuOY7GMQvyiEIcS-W4CVLbk';
+const contractId = "N4G1F2ftAbArKpS5iHjPSuOY7GMQvyiEIcS-W4CVLbk";
 
 const getContract = async () => {
   const wallet = await warp.arweave.wallets.generate();
@@ -20,7 +20,7 @@ const getState = async (contract) => {
 
 function App() {
   const [contractState, setContractState] = useState({});
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   useEffect(() => {
     async function fetchContractData() {
@@ -38,12 +38,12 @@ function App() {
     } else {
       const contract = await getContract();
       await contract.writeInteraction({
-        function: 'helloWrite',
+        function: "helloWrite",
         name: name,
       });
       const state = await getState(contract);
       setContractState((prevState) => ({ ...prevState, state }));
-      setName('');
+      setName("");
     }
   };
   const handleNameChange = (event) => {
@@ -63,10 +63,7 @@ function App() {
             value={name}
             onChange={handleNameChange}
           />
-          <button
-            className="add-button"
-            type="submit"
-          >
+          <button className="p-4 border border-red-600" type="submit">
             Add
           </button>
         </form>
@@ -75,7 +72,7 @@ function App() {
         <div className="state-items">
           {Object.keys(contractState.state).map((keyName) => (
             <p className="state-item" key={keyName}>
-              <p>{keyName}</p>
+              <p className="text-red-600 cursor-pointer">{keyName}</p>
               Content: {contractState.state[keyName]}
             </p>
           ))}
